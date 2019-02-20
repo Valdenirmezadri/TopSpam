@@ -1,2 +1,2 @@
 # TopSpam
-Generate a List of Top spam mails by subject
+Generate a List of Top spam mails by subject and send to administrator
