@@ -52,7 +52,7 @@ function getTop10() {
 function getIDS() {
 	while IFS= read -r assunto
 	  do
-		IDS=$(fgrep -i "$assunto" $MAILLOG|awk -F"message " '{print $2}'|cut -d" " -f1)
+		IDS=$(fgrep -i "$assunto" $MAILLOG|awk -F"message " '{print $2}'|egrep -v 'blacklisted|whitelisted'|cut -d" " -f1)
 		getScore "$assunto" "$IDS"
 
 	done < <(printf '%s\n' "$1")
